@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aladin&family=Allerta+Stencil&family=Fontdiner+Swanky&family=Indie+Flower&family=Rock+Salt&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Horror Website</title>
+</head>
+
+<body>
+    <div id="menu-img">
+        <img src="images/candle-1868640_1920.jpg" class="image1" alt="">
+        <div class="menu">
+            <img src="images/ghosts.png" alt="">
+            <h2>BEWARE</h2>
+            <h3>Halloween Virtu<span>AL</span> Event</h3>
+            <a href="#">Attend</a>
+        </div>
+    </div>
+
+
+    <div class="data1">
+        <div class="class1">
+            <div class="circle">
+                <img src="images/frightening-girl-with-tears-blood.jpg" alt="">
+            </div>
+            <div class="desc">
+                <h2>Intro & Trick or Treat<span> IceBreaker</span></h2>
+                <p> When there's no more room in hell, the dead will walk the earth.” Dawn of the Dead.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        <div class="class1">
+            <div class="circle1">
+                <img src="images/pumpkin-2327488_1920.jpg" alt="">
+            </div>
+            <div class="desc1">
+                <h2>When the Jews return to Zion<span> 12 Minutes</span></h2>
+                <p> Listen to them, the children of the night. What music they make!.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+
+        <div class="class1">
+            <div class="circle">
+                <img src="images/skull-2726131_1920.jpg" alt="">
+            </div>
+            <div class="desc">
+                <h2>Send Chills Up Your Spine<span> IceBreaker</span></h2>
+                <p> Everybody is a book of blood; wherever we’re opened, we’re red.</p>
+                <a href="#">Read More</a>
+            </div>
+           
+        </div>
+        <div class="footcon">
+            <img src="images/horror-png-27446.png" alt="">
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>Halloween Game</h2>
+        <h1 class="ml15">
+            <span class="word">Welcome to my</span>
+            <span class="word">Nightmare</span>
+        </h1>
+        <h4>I think you're gonna like it.</h4>
+        <p>Registration closes in <span id="time">05:00</span> minutes!</p>
+        <a href="#">Registration</a>
+    </div>
+
+    <div id="team">
+        <h2>Our Team</h2>
+        <div class="jyoti">
+            <img src="images/1.jpeg" alt="">
+            <p>Our Mentor</p>
+        </div>
+        <div class="santosh">
+            <img src="images/3.jpg" alt="">
+            <p>Founder</p>
+        </div>
+        <div class="bhagyshree">
+            <img src="images/2.jpg" alt="">
+            <p>Director</p>
+        </div>
+    </div>
+
+
+    <div class="footmenu">
+        <div class="left box">
+            <h2>Links</h2>
+            <ul>
+                <li>List of Events</li>
+                <li>Calendar</li>
+                <li>Register</li>
+                <li>Share</li>
+                <li>FAQ's</li>
+            </ul>
+        </div>
+        <div class="center box">
+            <h2>Contact Info</h2>
+            <ul>
+                <li>+91-123-456-789</li>
+                <li>+91-124-456-859</li>
+                <li>info@halloween.com</li>
+                <li>event@halloween.com</li>
+                <li>Unsubscribe</li>
+            </ul>
+        </div>
+        <div class="right box">
+            <h2>Links</h2>
+            <ul>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus aliquam debitis totam reprehenderit
+                    ut, et nemo cumque blanditiis labore ad veritatis.</p>
+                <div class="icon">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            var fiveMinutes = 60 * 5,
+                display = document.querySelector('#time');
+            startTimer(fiveMinutes, display);
+        };
+
+
+        anime.timeline({ loop: true })
+            .add({
+                targets: '.ml15 .word',
+                scale: [14, 1],
+                opacity: [0, 1],
+                easing: "easeOutCirc",
+                duration: 800,
+                delay: (el, i) => 800 * i
+            }).add({
+                targets: '.ml15',
+                opacity: 0,
+                duration: 1000,
+                easing: "easeOutExpo",
+                delay: 1000
+            });
+    </script>
+</body>
+
+</html>
